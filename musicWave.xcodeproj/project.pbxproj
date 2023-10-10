@@ -56,15 +56,39 @@
 		040B48632AD5CC4F007E4638 /* musicWave */ = {
 			isa = PBXGroup;
 			children = (
+				045B121B2AD5D28C0049B2D4 /* views */,
+				045B121A2AD5D2860049B2D4 /* models */,
+				045B12192AD5D27F0049B2D4 /* controllers */,
 				040B48642AD5CC4F007E4638 /* AppDelegate.swift */,
 				040B48662AD5CC4F007E4638 /* SceneDelegate.swift */,
-				040B48682AD5CC4F007E4638 /* ViewController.swift */,
 				040B486A2AD5CC4F007E4638 /* Main.storyboard */,
 				040B486D2AD5CC52007E4638 /* Assets.xcassets */,
 				040B486F2AD5CC52007E4638 /* LaunchScreen.storyboard */,
 				040B48722AD5CC52007E4638 /* Info.plist */,
 			);
 			path = musicWave;
+			sourceTree = "<group>";
+		};
+		045B12192AD5D27F0049B2D4 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				040B48682AD5CC4F007E4638 /* ViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		045B121A2AD5D2860049B2D4 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		045B121B2AD5D28C0049B2D4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
