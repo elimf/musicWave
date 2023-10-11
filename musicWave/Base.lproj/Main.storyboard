@@ -54,12 +54,40 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCollectionView" id="ePp-E6-tu8">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="164"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3FJ-ai-GHV">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="41o-P5-NJb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amz-5B-hTd">
+                                                    <rect key="frame" x="6" y="130" width="68" height="16"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                                    <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXW-Pa-rPu">
+                                                    <rect key="frame" x="8" y="146" width="52" height="13"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                                    <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="41o-P5-NJb" secondAttribute="trailing" id="9Ly-hq-nWz"/>
+                                                <constraint firstAttribute="bottom" secondItem="41o-P5-NJb" secondAttribute="bottom" constant="36" id="Fbr-xg-lQk"/>
+                                                <constraint firstItem="DXW-Pa-rPu" firstAttribute="top" secondItem="amz-5B-hTd" secondAttribute="bottom" id="M9z-BL-RAh"/>
+                                                <constraint firstItem="amz-5B-hTd" firstAttribute="leading" secondItem="3FJ-ai-GHV" secondAttribute="leading" constant="6" id="S8t-gR-eca"/>
+                                                <constraint firstItem="DXW-Pa-rPu" firstAttribute="leading" secondItem="3FJ-ai-GHV" secondAttribute="leading" constant="8" id="n2l-ho-ZjM"/>
+                                                <constraint firstItem="41o-P5-NJb" firstAttribute="leading" secondItem="3FJ-ai-GHV" secondAttribute="leading" id="qcB-qh-Hht"/>
+                                                <constraint firstItem="41o-P5-NJb" firstAttribute="top" secondItem="3FJ-ai-GHV" secondAttribute="top" id="tNk-dE-IuE"/>
+                                                <constraint firstItem="amz-5B-hTd" firstAttribute="top" secondItem="41o-P5-NJb" secondAttribute="bottom" constant="2" id="vsb-tx-vZ1"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="128" height="164"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -87,7 +115,6 @@
         <!--Search View Controller-->
         <scene sceneID="AAx-sr-22K">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mQv-di-Uuy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="search" id="w4u-tQ-Pmi" customClass="SearchViewController" customModule="musicWave" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Wl-i8-2qu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -97,19 +124,47 @@
                                 <rect key="frame" x="5" y="139" width="383" height="630"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="brR-TM-ZIM">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="128" height="164"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="searchCollectionView" id="IaP-BH-n8d">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="164"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zJA-mo-0AJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ue9-9N-HHG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WQ-XP-mnK">
+                                                    <rect key="frame" x="5" y="130" width="56" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPp-Ev-VWN">
+                                                    <rect key="frame" x="5" y="145" width="52" height="13"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                                    <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rPp-Ev-VWN" firstAttribute="leading" secondItem="zJA-mo-0AJ" secondAttribute="leading" constant="5" id="6Wh-zY-Jxo"/>
+                                                <constraint firstAttribute="trailing" secondItem="ue9-9N-HHG" secondAttribute="trailing" id="Bh4-SU-h6A"/>
+                                                <constraint firstItem="rPp-Ev-VWN" firstAttribute="top" secondItem="0WQ-XP-mnK" secondAttribute="bottom" id="QPi-qP-IlO"/>
+                                                <constraint firstItem="ue9-9N-HHG" firstAttribute="top" secondItem="zJA-mo-0AJ" secondAttribute="top" id="l0y-zO-FcR"/>
+                                                <constraint firstItem="0WQ-XP-mnK" firstAttribute="leading" secondItem="zJA-mo-0AJ" secondAttribute="leading" constant="5" id="nxT-HG-C0k"/>
+                                                <constraint firstAttribute="bottom" secondItem="ue9-9N-HHG" secondAttribute="bottom" constant="40" id="vPV-hi-iCq"/>
+                                                <constraint firstItem="ue9-9N-HHG" firstAttribute="leading" secondItem="zJA-mo-0AJ" secondAttribute="leading" id="wXE-tT-hML"/>
+                                                <constraint firstItem="0WQ-XP-mnK" firstAttribute="top" secondItem="ue9-9N-HHG" secondAttribute="bottom" constant="6" id="z0Y-8t-H5V"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="128" height="164"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -133,8 +188,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="ZCM-xZ-dDA"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQv-di-Uuy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="309" y="-290"/>
+            <point key="canvasLocation" x="307.63358778625951" y="-290.14084507042253"/>
         </scene>
     </scenes>
     <color key="tintColor" name="launch-screen"/>

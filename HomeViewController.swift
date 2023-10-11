@@ -19,8 +19,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeCollectionView.delegate = self
-        homeCollectionView.dataSource = self
+        //homeCollectionView.delegate = self
+        //homeCollectionView.dataSource = self
         print("ViewDidLoad")
         
         let config = URLSessionConfiguration.default
