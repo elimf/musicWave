@@ -201,6 +201,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="ZCM-xZ-dDA"/>
+                    <connections>
+                        <outlet property="seachField" destination="SRb-py-HIN" id="0q8-09-r3V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQv-di-Uuy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
