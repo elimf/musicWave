@@ -8,19 +8,35 @@
 import Foundation
 
 struct Track {
-    let id: String
+    //let id: String
     let title: String
-    let title_short: String
-    let title_version: String
+    //let title_short: String
+    //let title_version: String
     let link: String
-    let duration: String
-    let rank: String
-    let explicit_lyrics: Bool
-    let explicit_content_lyrics: Int
-    let explicit_content_cover: Int
-    let preview: String
-    let md5_image: String
-    let artist: Artist
+    //let duration: String
+    //let rank: String
+    //let explicit_lyrics: Bool
+    //let explicit_content_lyrics: Int
+    //let explicit_content_cover: Int
+    //let preview: String
+    //let md5_image: String
+    //let artist: Artist
     let album: Album
-    let type: String
+    //let type: String
+}
+
+extension Track {
+    init?(json: [String: AnyObject]) {
+        guard let title = json["title"] as? String,
+              let url = json["link"] as? String,
+              let album = json["album"] as? [String:AnyObject],
+              let _ = json["duration"] as? Int
+        else {
+            return nil
+        }
+        
+        self.title = title
+        self.link = url
+        self.album = Album(json: album)!
+    }
 }

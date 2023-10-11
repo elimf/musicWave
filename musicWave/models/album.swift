@@ -8,11 +8,11 @@
 import Foundation
 
 struct Album {
-        let id: Int
+        //let id: Int
         let title: String
-        let cover: String
+        //let cover: String
         let coverSmall: String
-        let coverMedium: String
+        /*let coverMedium: String
         let coverBig: String
         let coverXL: String
         let md5Image: String
@@ -26,5 +26,17 @@ struct Album {
         let release_date: String
         let record_type: String
         let artist: Artist
-        let tracks: [Track]
+        let tracks: [Track]*/
     }
+
+extension Album {
+    init?(json: [String: AnyObject]) {
+        guard let title = json["title"] as? String,
+              let coverSmall = json["cover_small"] as? String
+        else {
+            return nil
+        }
+        self.title = title
+        self.coverSmall = coverSmall
+    }
+}
