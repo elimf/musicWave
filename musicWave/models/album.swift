@@ -11,9 +11,8 @@ struct Album {
         //let id: Int
         let title: String
         //let cover: String
-        let coverSmall: String
-        /*let coverMedium: String
-        let coverBig: String
+        let coverMedium: String
+        /*let coverBig: String
         let coverXL: String
         let md5Image: String
         let tracklist: String
@@ -32,11 +31,11 @@ struct Album {
 extension Album {
     init?(json: [String: AnyObject]) {
         guard let title = json["title"] as? String,
-              let coverSmall = json["cover_small"] as? String
+              let coverMedium = json["cover_medium"] as? String
         else {
             return nil
         }
         self.title = title
-        self.coverSmall = coverSmall
+        self.coverMedium = coverMedium
     }
 }

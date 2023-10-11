@@ -11,13 +11,23 @@ class MainTabBarController: UITabBarController {
     
 }
 
-class HomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var tracks: [Track] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ViewDidLoad")
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+
+
+
         
         let config = URLSessionConfiguration.default
                 let session = URLSession(configuration: config)
@@ -36,7 +46,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                                         if let track = Track(json: item) {
                                             self.tracks.append(track)
                                             print(track.title)
-                                            print(track.album.coverSmall)
+                                            print(track.album.coverMedium)
                                         }
                                     }
                                 }
@@ -45,10 +55,14 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
                     }
                     
                     DispatchQueue.main.async {
-                      //  self.tableView.reloadData()
+                      self.collectionView.reloadData()
                     }
                 }
                 task.resume()
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -56,14 +70,30 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCollectionView", for: indexPath) as? homeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCollectionViewCell", for: indexPath) as? homeCollectionViewCell
 
             let dataItem = self.tracks[indexPath.item]
-            //cell.titleLabel.text = dataItem.title
-        
-        cell!.trackLabel.text = dataItem.title
+
+        cell?.configure(with: dataItem)
         
         return cell!
+    }
+    
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let noOfCellsInRow: CGFloat = 3 // Change this to your desired number of items per row
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+
+        let totalSpacing = flowLayout.minimumInteritemSpacing * (noOfCellsInRow - 1)
+        let itemWidth = (collectionView.bounds.width - totalSpacing) / noOfCellsInRow
+        let itemHeight = itemWidth + 50 // You can adjust the height as needed
+
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
+
+
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
     }
 
 }

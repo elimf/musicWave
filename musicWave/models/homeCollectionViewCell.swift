@@ -19,8 +19,16 @@ class homeCollectionViewCell: UICollectionViewCell {
         }
         
         public func configure(with model: Track) {
-            coverImageView.image = model.image
-            trackLabel.text = model.name
-            artistLabel.text = model.
+            
+            if let imageUrl = URL(string: model.album.coverMedium), let imageData = try? Data(contentsOf: imageUrl) {
+                if let image = UIImage(data: imageData) {
+                    coverImageView.image = image
+                    coverImageView.contentMode = .scaleAspectFill
+                    coverImageView.layer.cornerRadius = (coverImageView.frame.size.height) / 14
+                    coverImageView.clipsToBounds = true
+                }
+            }
+            trackLabel.text = model.title
+            artistLabel.text = model.artist.name
         }
 }
