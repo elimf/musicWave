@@ -15,12 +15,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     var tracks: [Track] = []
 
-    @IBOutlet weak var homeCollectionView: UICollectionView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //homeCollectionView.delegate = self
-        //homeCollectionView.dataSource = self
         print("ViewDidLoad")
         
         let config = URLSessionConfiguration.default
@@ -60,11 +56,14 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCollectionView", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCollectionView", for: indexPath) as? homeCollectionViewCell
 
             let dataItem = self.tracks[indexPath.item]
             //cell.titleLabel.text = dataItem.title
-            return cell
+        
+        cell!.trackLabel.text = dataItem.title
+        
+        return cell!
     }
 
 }

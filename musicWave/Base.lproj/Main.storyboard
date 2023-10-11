@@ -53,7 +53,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCollectionView" id="ePp-E6-tu8">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCollectionView" id="ePp-E6-tu8" customClass="homeCollectionViewCell" customModule="musicWave" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="164"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3FJ-ai-GHV">
@@ -88,6 +88,11 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="128" height="164"/>
+                                        <connections>
+                                            <outlet property="artistLabel" destination="DXW-Pa-rPu" id="62M-Ne-bpS"/>
+                                            <outlet property="coverImageView" destination="41o-P5-NJb" id="lzI-h2-1ec"/>
+                                            <outlet property="trackLabel" destination="amz-5B-hTd" id="YWx-V5-w6b"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -107,6 +112,12 @@
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="az0-dg-ECg">
                         <color key="badgeColor" name="launch-screen"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="artistLabel" destination="DXW-Pa-rPu" id="dns-Io-lJY"/>
+                        <outlet property="coverImageView" destination="41o-P5-NJb" id="kPS-kT-OE1"/>
+                        <outlet property="homeCollectionView" destination="ePp-E6-tu8" id="hpq-bC-sZR"/>
+                        <outlet property="trackLabel" destination="amz-5B-hTd" id="D5b-ic-665"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -19,6 +19,7 @@
 		C4010A132AD6924500CCC95B /* album.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4010A122AD6924500CCC95B /* album.swift */; };
 		C4010A162AD694AD00CCC95B /* genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4010A152AD694AD00CCC95B /* genre.swift */; };
 		C4010A192AD694D100CCC95B /* track.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4010A182AD694D100CCC95B /* track.swift */; };
+		C4010A1B2AD6C5B900CCC95B /* homeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4010A1A2AD6C5B900CCC95B /* homeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C4010A122AD6924500CCC95B /* album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = album.swift; sourceTree = "<group>"; };
 		C4010A152AD694AD00CCC95B /* genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genre.swift; sourceTree = "<group>"; };
 		C4010A182AD694D100CCC95B /* track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = track.swift; sourceTree = "<group>"; };
+		C4010A1A2AD6C5B900CCC95B /* homeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = homeCollectionViewCell.swift; path = musicWave/models/homeCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				C4010A0B2AD6894800CCC95B /* HomeViewController.swift */,
 				C4010A0D2AD6899600CCC95B /* SearchViewController.swift */,
+				C4010A1A2AD6C5B900CCC95B /* homeCollectionViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				C4010A112AD691CE00CCC95B /* artist.swift in Sources */,
 				C4010A0E2AD6899600CCC95B /* SearchViewController.swift in Sources */,
 				040B48692AD5CC4F007E4638 /* ViewController.swift in Sources */,
+				C4010A1B2AD6C5B900CCC95B /* homeCollectionViewCell.swift in Sources */,
 				C4010A132AD6924500CCC95B /* album.swift in Sources */,
 				040B48652AD5CC4F007E4638 /* AppDelegate.swift in Sources */,
 				C4010A192AD694D100CCC95B /* track.swift in Sources */,
