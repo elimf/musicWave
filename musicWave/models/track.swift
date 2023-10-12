@@ -13,7 +13,7 @@ struct Track {
     //let title_short: String
     //let title_version: String
     let link: String
-    //let duration: String
+    let duration: Int
     //let rank: String
     //let explicit_lyrics: Bool
     //let explicit_content_lyrics: Int
@@ -29,6 +29,7 @@ extension Track {
     init?(json: [String: AnyObject]) {
         guard let title = json["title"] as? String,
               let url = json["link"] as? String,
+              let duration = json["duration"] as? Int,
               let album = json["album"] as? [String:AnyObject],
               let artist = json["artist"] as? [String: AnyObject],
               let preview = json["preview"] as? String,
@@ -39,6 +40,7 @@ extension Track {
         
         self.title = title
         self.link = url
+        self.duration = duration
         self.album = Album(json: album)!
         self.artist = Artist(json: artist)!
         self.preview = preview
