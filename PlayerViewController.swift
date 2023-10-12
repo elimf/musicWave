@@ -30,7 +30,8 @@ class PlayerViewController: UIViewController {
             trackLabel.text = selectedTrack.title
             artistLabel.text = selectedTrack.artist.name
             
-            let audioUrl = URL(fileURLWithPath: selectedTrack.preview)
+            let audioUrl = 
+            URL(string:selectedTrack.preview)!
             AudioPlayerManager.shared.playAudio(url: audioUrl)
         }
     }

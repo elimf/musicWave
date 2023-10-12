@@ -1,19 +1,13 @@
-//
-//  SearchViewController.swift
-//  musicWave
-//
-//  Created by Massimiliano HUBERT-ABBATE on 11/10/2023.
-//
-
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
 
     @IBOutlet weak var seachField: UITextField!
     
-    @IBOutlet weak var collection: UICollectionView!
-    var artistArray: [Any] = []
+    @IBOutlet weak var artistCollection: UICollectionView!
+    
+    var artistArray: [Artist] = []
     
     //Define the structure
     let infoMessage: UILabel = UILabel (frame: CGRect(x: 0, y: 0, width: 150, height: 100))
@@ -24,6 +18,12 @@ class SearchViewController: UIViewController {
     let messageFind = "Rechercher un artiste"
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //COllection define
+        artistCollection.dataSource = self
+        artistCollection.delegate = self
+        
+        
         seachField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
         //Definine the label for message
@@ -39,6 +39,9 @@ class SearchViewController: UIViewController {
         if let text = textField.text {
             if text.isEmpty{
                 self.handleLabel(message: messageFind)
+                DispatchQueue.main.async {
+                  self.artistCollection.reloadData()
+                }
                 return
             }
             fetchDataFromAPI(search : text)
@@ -62,8 +65,13 @@ class SearchViewController: UIViewController {
                     self.mapArtist(json : json as AnyObject)
                     
                 }
-               
+                print(self.artistArray)
+                DispatchQueue.main.async {
+                  self.artistCollection.reloadData()
+                }
+                
             }
+           
             task.resume()
         }
     }
@@ -80,19 +88,56 @@ class SearchViewController: UIViewController {
         }
         if self.artistArray.isEmpty{
             self.handleLabel(message: "Auncun résultat trouver")
+            
         }else{
             self.handleLabel(message: "")
             
         }
-        print(artistArray)
+       
     }
     
     private func handleLabel (message : String) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            //self.collection.isHidden = true
+
             self.infoMessage.text = message
         }}
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.artistArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistCollectionViewCell", for: indexPath) as? ArtistCollectionViewCell
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "searchCollectionView", for: indexPath) as? ArtistCollectionViewCell
+        let dataItem = self.artistArray[indexPath.item]
+
+        cell?.configure(with: dataItem)
+        
+        return cell!
+    }
+    
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let noOfCellsInRow: CGFloat = 3 // Change this to your desired number of items per row
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+
+        let totalSpacing = flowLayout.minimumInteritemSpacing * (noOfCellsInRow - 1)
+        let itemWidth = (collectionView.bounds.width - totalSpacing) / noOfCellsInRow
+        let itemHeight = itemWidth + 50 // You can adjust the height as needed
+
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
+
+
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
     
 
 }

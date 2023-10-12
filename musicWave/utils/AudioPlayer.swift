@@ -10,9 +10,15 @@ class AudioPlayerManager {
     }
 
     func playAudio(url: URL) {
-        let playerItem = AVPlayerItem(url: url)
-        player?.replaceCurrentItem(with: playerItem)
-        player?.play()
+        do {
+                    player = try AVPlayer(url: url)
+
+                  
+                } catch let error {
+                    print(error)
+                }
+                player?.play()
+        
     }
 
     func pause() {
