@@ -28,6 +28,7 @@
 		C48FC2A72AD7E3B700C39E09 /* TapGestureRecognizerWithId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48FC2A62AD7E3B700C39E09 /* TapGestureRecognizerWithId.swift */; };
 		C48FC2A92AD82FFF00C39E09 /* TrackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48FC2A82AD82FFF00C39E09 /* TrackListViewController.swift */; };
 		C48FC2AB2AD835D100C39E09 /* trackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48FC2AA2AD835D100C39E09 /* trackTableViewCell.swift */; };
+		C48FC2AD2AD8515900C39E09 /* tracklistArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48FC2AC2AD8515900C39E09 /* tracklistArtist.swift */; };
 		C4F9F6342AD6F56E00402808 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F9F6332AD6F56E00402808 /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		C48FC2A62AD7E3B700C39E09 /* TapGestureRecognizerWithId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerWithId.swift; sourceTree = "<group>"; };
 		C48FC2A82AD82FFF00C39E09 /* TrackListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewController.swift; sourceTree = "<group>"; };
 		C48FC2AA2AD835D100C39E09 /* trackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trackTableViewCell.swift; sourceTree = "<group>"; };
+		C48FC2AC2AD8515900C39E09 /* tracklistArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tracklistArtist.swift; sourceTree = "<group>"; };
 		C4F9F6332AD6F56E00402808 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 				C4010A182AD694D100CCC95B /* track.swift */,
 				C48FC2A62AD7E3B700C39E09 /* TapGestureRecognizerWithId.swift */,
 				648415FA2AD847330064BA90 /* TrackList.swift */,
+				C48FC2AC2AD8515900C39E09 /* tracklistArtist.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				C48FC2A92AD82FFF00C39E09 /* TrackListViewController.swift in Sources */,
 				C4010A112AD691CE00CCC95B /* artist.swift in Sources */,
 				C4010A0E2AD6899600CCC95B /* SearchViewController.swift in Sources */,
+				C48FC2AD2AD8515900C39E09 /* tracklistArtist.swift in Sources */,
 				C48FC2A72AD7E3B700C39E09 /* TapGestureRecognizerWithId.swift in Sources */,
 				040B48692AD5CC4F007E4638 /* ViewController.swift in Sources */,
 				C4010A1B2AD6C5B900CCC95B /* homeCollectionViewCell.swift in Sources */,

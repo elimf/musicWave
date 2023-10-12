@@ -24,7 +24,7 @@ struct Album {
         let duration: Int
         let release_date: String
         let record_type: String
-        let artist: Artist
+        let artist: Artist 
         let tracks: [Track]*/
     
     

@@ -9,6 +9,8 @@ import UIKit
 
 class trackTableViewCell: UITableViewCell {
 
+    var track = TrackList?.self
+    
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var trackLabel: UILabel!
     override func awakeFromNib() {
@@ -23,9 +25,7 @@ class trackTableViewCell: UITableViewCell {
     }
 
     public func configure(with model: TrackList) {
-        
-        artistLabel.text = model.title
-        
-        
+        trackLabel.text = model.title
+        artistLabel.text = model.artist.name
     }
 }

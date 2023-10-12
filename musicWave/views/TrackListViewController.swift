@@ -62,12 +62,13 @@ class TrackListViewController: UIViewController, UITableViewDelegate, UITableVie
                   task.resume()
               }
           }
-          func mapAlbum(json: AnyObject) {
+           func mapAlbum(json: AnyObject) {
               if  let data = json["data"] as? [[String : AnyObject]] {
                   for item in data {
                       if let album = TrackList(json: item){
                           self.trackArray.append(album)
-                          
+
+                          print(item)
                       }
                   }
               } else {
@@ -82,11 +83,20 @@ class TrackListViewController: UIViewController, UITableViewDelegate, UITableVie
    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "trackCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trackCell", for: indexPath) as! trackTableViewCell
         let track = trackArray[indexPath.row]
-        cell.textLabel?.text = track.title
-            return cell
-        
+        cell.configure(with: track)
+        return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedTrack = trackArray[indexPath.row]
+        
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "player") as? PlayerViewController {
+            vc.trackList = selectedTrack
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+
 
 }

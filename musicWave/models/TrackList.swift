@@ -16,6 +16,8 @@ struct TrackList{
     let duration: Int
  
     let preview: String
+    let artist: TrackListArtist
+   let id: Int
 }
 
 extension TrackList {
@@ -24,9 +26,10 @@ extension TrackList {
         guard let title = json["title"] as? String,
               let url = json["link"] as? String,
               let duration = json["duration"] as? Int,
-              let preview = json["preview"] as? String
+              let preview = json["preview"] as? String,
+              let artist = json["artist"] as? [String: AnyObject],
+              let id = json["id"] as? Int
         else {
-            print("nullllllll")
             return nil
         }
         
@@ -34,6 +37,8 @@ extension TrackList {
         self.link = url
         self.duration = duration
         self.preview = preview
+        self.artist = TrackListArtist(json: artist)!
+        self.id = id
     }
     
 }
