@@ -27,14 +27,15 @@ struct Track {
 
 extension Track {
     init?(json: [String: AnyObject]) {
+        
         guard let title = json["title"] as? String,
               let url = json["link"] as? String,
               let duration = json["duration"] as? Int,
               let album = json["album"] as? [String:AnyObject],
               let artist = json["artist"] as? [String: AnyObject],
-              let preview = json["preview"] as? String,
-              let _ = json["duration"] as? Int
+              let preview = json["preview"] as? String
         else {
+            print("nullllllll")
             return nil
         }
         
@@ -45,4 +46,5 @@ extension Track {
         self.artist = Artist(json: artist)!
         self.preview = preview
     }
+    
 }

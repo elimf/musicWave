@@ -373,7 +373,7 @@
         <!--Track List View Controller-->
         <scene sceneID="ngk-lf-4xF">
             <objects>
-                <viewController id="dGU-Kd-Mr8" customClass="TrackListViewController" customModule="musicWave" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlbumVIewController" id="dGU-Kd-Mr8" customClass="TrackListViewController" customModule="musicWave" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bzo-GP-Hhq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -420,6 +420,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="artistLabel" destination="OLk-Vq-5OS" id="ARh-Nz-cDE"/>
+                                            <outlet property="trackLabel" destination="BE6-nF-a2a" id="DU5-13-0ZE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -440,6 +444,11 @@
                             <constraint firstItem="m7U-ZO-ggD" firstAttribute="trailing" secondItem="dZL-zL-ADX" secondAttribute="trailing" constant="82" id="kbr-Vp-UhE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="albumImage" destination="C1V-oM-pYW" id="db8-CU-vf4"/>
+                        <outlet property="albumLabel" destination="dZL-zL-ADX" id="r8G-MC-vEu"/>
+                        <outlet property="tableTrack" destination="n2v-Gz-Xtv" id="8Px-yV-fGW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhW-C5-704" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -495,7 +504,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -504,7 +513,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

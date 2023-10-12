@@ -128,11 +128,20 @@ class ArtistViewController: UIViewController, UICollectionViewDelegate,UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
   
             let albulm = self.albumArray[indexPath.item]
-        print(albulm)
+        
+        
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlbumVIewController") as? TrackListViewController {
+            vc.album = albulm
+            
+            
+            //let navigationController = UINavigationController(rootViewController: vc)
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            // self.navigationController?.present(vc, animated: true, completion: nil)
+        }
+        
             
         }
-      
-      
-   
+    
 
 }

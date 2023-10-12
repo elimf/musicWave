@@ -17,6 +17,7 @@ struct Artist {
         //let pictureBig: String
         //let pictureXL: String
         //let type: String
+    
     }
 
 extension Artist {

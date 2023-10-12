@@ -15,6 +15,7 @@
 		040B48712AD5CC52007E4638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040B486F2AD5CC52007E4638 /* LaunchScreen.storyboard */; };
 		648415F72AD7E77E0064BA90 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648415F62AD7E77E0064BA90 /* ArtistViewController.swift */; };
 		648415F92AD81F1A0064BA90 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648415F82AD81F1A0064BA90 /* AlbumCollectionViewCell.swift */; };
+		648415FB2AD847330064BA90 /* TrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648415FA2AD847330064BA90 /* TrackList.swift */; };
 		C4010A0C2AD6894800CCC95B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4010A0B2AD6894800CCC95B /* HomeViewController.swift */; };
 		C4010A0E2AD6899600CCC95B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4010A0D2AD6899600CCC95B /* SearchViewController.swift */; };
 		C4010A112AD691CE00CCC95B /* artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4010A102AD691CE00CCC95B /* artist.swift */; };
@@ -41,6 +42,7 @@
 		040B48722AD5CC52007E4638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		648415F62AD7E77E0064BA90 /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		648415F82AD81F1A0064BA90 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		648415FA2AD847330064BA90 /* TrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackList.swift; sourceTree = "<group>"; };
 		C4010A0B2AD6894800CCC95B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		C4010A0D2AD6899600CCC95B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		C4010A102AD691CE00CCC95B /* artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = artist.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				C4010A152AD694AD00CCC95B /* genre.swift */,
 				C4010A182AD694D100CCC95B /* track.swift */,
 				C48FC2A62AD7E3B700C39E09 /* TapGestureRecognizerWithId.swift */,
+				648415FA2AD847330064BA90 /* TrackList.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				040B48672AD5CC4F007E4638 /* SceneDelegate.swift in Sources */,
 				C4010A0C2AD6894800CCC95B /* HomeViewController.swift in Sources */,
 				C4F9F6342AD6F56E00402808 /* PlayerViewController.swift in Sources */,
+				648415FB2AD847330064BA90 /* TrackList.swift in Sources */,
 				C48FC2A52AD7E38900C39E09 /* ArtistCollectionViewCell.swift in Sources */,
 				C4010A162AD694AD00CCC95B /* genre.swift in Sources */,
 				C48FC2A22AD7DC7700C39E09 /* AudioPlayer.swift in Sources */,

@@ -9,6 +9,8 @@ import UIKit
 
 class trackTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var trackLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,4 +22,10 @@ class trackTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    public func configure(with model: TrackList) {
+        
+        artistLabel.text = model.title
+        
+        
+    }
 }
