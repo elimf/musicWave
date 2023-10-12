@@ -18,7 +18,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate,UICollect
     let messageFind = "Rechercher un artiste"
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       self.title = "Recherche"
         //COllection define
         artistCollection.dataSource = self
         artistCollection.delegate = self
@@ -139,5 +139,19 @@ class SearchViewController: UIViewController, UICollectionViewDelegate,UICollect
         return UIEdgeInsets.zero
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            print("deee")
+            let artist = self.artistArray[indexPath.item]
+            
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ArtistVIewController") as? ArtistViewController {
+            vc.artist = artist
+            
 
+            //let navigationController = UINavigationController(rootViewController: vc)
+            self.navigationController?.pushViewController(vc, animated: true)
+
+           // self.navigationController?.present(vc, animated: true, completion: nil)
+
+        }
+        }
 }

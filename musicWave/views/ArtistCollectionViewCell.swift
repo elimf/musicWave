@@ -1,7 +1,8 @@
 import UIKit
 
 class ArtistCollectionViewCell : UICollectionViewCell {
-    
+    var navigationController: UINavigationController?
+
     @IBOutlet weak var titleArtist: UILabel!
     
     @IBOutlet weak var items: UIView!
@@ -26,12 +27,24 @@ class ArtistCollectionViewCell : UICollectionViewCell {
         titleArtist.text = String(model.id)
     
         
-        let tapGesture = TapGestureRecognizerWithID(target: self, action: #selector(handleTap(_:)))
-        tapGesture.id = model.id
-        items.addGestureRecognizer(tapGesture)
     }
     
-    @objc func handleTap(_ sender: TapGestureRecognizerWithID){
-        print(sender.id)
+    @objc func handleTap(_ sender: TapGestureRecognizerWithArtist){
+        print(sender.artist.id)
+           
+        
+        //let artistViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ArtistVIewController") as! ArtistViewController
+      
+           
+       
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ArtistVIewController") as? ArtistViewController{
+        
+        }
+        //let navigationController = UINavigationController(rootViewController: vc)
+       
+    
+        
+        
+
     }
 }

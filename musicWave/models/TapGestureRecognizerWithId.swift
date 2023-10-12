@@ -1,6 +1,10 @@
-import Foundation
 import UIKit
 
-class TapGestureRecognizerWithID: UITapGestureRecognizer {
-    var id: Int = 0
+class TapGestureRecognizerWithArtist: UITapGestureRecognizer {
+    var artist: Artist
+    
+    init(target: Any?, action: Selector?, artist: Artist) {
+        self.artist = artist
+        super.init(target: target, action: action)
+    }
 }
