@@ -67,7 +67,7 @@ class PlayerViewController: UIViewController {
     @IBAction func sliderTouchDown(_ sender: UISlider) {
         isSeeking = true
     }
-    
+
     @IBAction func sliderTouchUpInside(_ sender: UISlider) {
         isSeeking = false
     }
