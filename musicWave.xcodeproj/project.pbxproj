@@ -20,6 +20,7 @@
 		C4010A162AD694AD00CCC95B /* genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4010A152AD694AD00CCC95B /* genre.swift */; };
 		C4010A192AD694D100CCC95B /* track.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4010A182AD694D100CCC95B /* track.swift */; };
 		C4010A1B2AD6C5B900CCC95B /* homeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4010A1A2AD6C5B900CCC95B /* homeCollectionViewCell.swift */; };
+		C48FC2A22AD7DC7700C39E09 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48FC2A12AD7DC7700C39E09 /* AudioPlayer.swift */; };
 		C4F9F6342AD6F56E00402808 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F9F6332AD6F56E00402808 /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		C4010A152AD694AD00CCC95B /* genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genre.swift; sourceTree = "<group>"; };
 		C4010A182AD694D100CCC95B /* track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = track.swift; sourceTree = "<group>"; };
 		C4010A1A2AD6C5B900CCC95B /* homeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = homeCollectionViewCell.swift; path = musicWave/models/homeCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		C48FC2A12AD7DC7700C39E09 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		C4F9F6332AD6F56E00402808 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 		040B48632AD5CC4F007E4638 /* musicWave */ = {
 			isa = PBXGroup;
 			children = (
+				C48FC2A02AD7DC2500C39E09 /* utils */,
 				045B121B2AD5D28C0049B2D4 /* views */,
 				045B121A2AD5D2860049B2D4 /* models */,
 				045B12192AD5D27F0049B2D4 /* controllers */,
@@ -113,6 +116,14 @@
 				C4010A1A2AD6C5B900CCC95B /* homeCollectionViewCell.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		C48FC2A02AD7DC2500C39E09 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				C48FC2A12AD7DC7700C39E09 /* AudioPlayer.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 				C4010A0C2AD6894800CCC95B /* HomeViewController.swift in Sources */,
 				C4F9F6342AD6F56E00402808 /* PlayerViewController.swift in Sources */,
 				C4010A162AD694AD00CCC95B /* genre.swift in Sources */,
+				C48FC2A22AD7DC7700C39E09 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

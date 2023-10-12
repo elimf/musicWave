@@ -242,6 +242,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="play.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="playerButton:" destination="jre-Q8-Ga0" eventType="touchUpInside" id="jiQ-4H-Bcs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="52Q-ZR-0Sm"/>
@@ -257,6 +260,12 @@
                             <constraint firstItem="ST3-Sw-TRM" firstAttribute="top" secondItem="52Q-ZR-0Sm" secondAttribute="top" constant="70" id="r4A-7x-9X0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="artistLabel" destination="42e-rh-D3M" id="zrE-qC-FQo"/>
+                        <outlet property="trackImageView" destination="ST3-Sw-TRM" id="B9c-ia-pQD"/>
+                        <outlet property="trackLabel" destination="TdD-0W-hG1" id="Crm-vV-2Nc"/>
+                        <outlet property="trackSlider" destination="eLq-fs-saz" id="YUv-7G-FiI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuK-3K-zrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
