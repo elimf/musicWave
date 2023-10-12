@@ -2,8 +2,6 @@ import UIKit
 
 class ArtistCollectionViewCell : UICollectionViewCell {
     var navigationController: UINavigationController?
-
-    @IBOutlet weak var titleArtist: UILabel!
     
     @IBOutlet weak var items: UIView!
     @IBOutlet weak var artistImage: UIImageView!
@@ -24,10 +22,5 @@ class ArtistCollectionViewCell : UICollectionViewCell {
             }
         }
         labelArtist.text = model.name
-        titleArtist.text = String(model.id)
-    
-        
     }
-    
-
 }
