@@ -29,22 +29,5 @@ class ArtistCollectionViewCell : UICollectionViewCell {
         
     }
     
-    @objc func handleTap(_ sender: TapGestureRecognizerWithArtist){
-        print(sender.artist.id)
-           
-        
-        //let artistViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ArtistVIewController") as! ArtistViewController
-      
-           
-       
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ArtistVIewController") as? ArtistViewController{
-        
-        }
-        //let navigationController = UINavigationController(rootViewController: vc)
-       
-    
-        
-        
 
-    }
 }
