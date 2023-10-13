@@ -65,7 +65,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate,UICollect
                     self.mapArtist(json : json as AnyObject)
                     
                 }
-                print(self.artistArray)
                 DispatchQueue.main.async {
                   self.artistCollection.reloadData()
                 }
@@ -146,11 +145,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate,UICollect
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ArtistVIewController") as? ArtistViewController {
             vc.artist = artist
             
-
-            //let navigationController = UINavigationController(rootViewController: vc)
             self.navigationController?.pushViewController(vc, animated: true)
-
-           // self.navigationController?.present(vc, animated: true, completion: nil)
 
         }
         }

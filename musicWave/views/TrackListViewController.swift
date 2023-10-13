@@ -14,6 +14,7 @@ class TrackListViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableTrack: UITableView!
     @IBOutlet weak var albumLabel: UILabel!
     @IBOutlet weak var albumImage: UIImageView!
+    
     var album : Album?
     var trackArray : [TrackList] = []
     override func viewDidLoad() {
@@ -21,7 +22,7 @@ class TrackListViewController: UIViewController, UITableViewDelegate, UITableVie
         self.title = "Album"
         tableTrack.delegate = self
         tableTrack.dataSource = self
-        print("------------------------------------------------------------------------------")
+        
         if let albumSelect = album {
             let URLStr = albumSelect.coverBig
                     if let url = URL(string: URLStr), let data = try? Data(contentsOf: url) {
@@ -65,10 +66,11 @@ class TrackListViewController: UIViewController, UITableViewDelegate, UITableVie
            func mapAlbum(json: AnyObject) {
               if  let data = json["data"] as? [[String : AnyObject]] {
                   for item in data {
-                      if let album = TrackList(json: item){
-                          self.trackArray.append(album)
-
-                          print(item)
+                      if let imageTrack = album?.coverMedium{
+                          if let album = TrackList(json: item, trackImage : imageTrack){
+                              self.trackArray.append(album)
+                      }
+                      
                       }
                   }
               } else {
@@ -91,9 +93,20 @@ class TrackListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedTrack = trackArray[indexPath.row]
-        
+        self.launchPlayer(track: selectedTrack)
+       
+    }
+    
+    @IBAction func randomButton(_ sender : Any){
+        if let randomTrack = trackArray.randomElement(){
+            self.launchPlayer(track: randomTrack)
+        }
+    }
+    
+    
+    func launchPlayer(track : TrackList){
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "player") as? PlayerViewController {
-            vc.trackList = selectedTrack
+            vc.trackList = track
             self.present(vc, animated: true, completion: nil)
         }
     }

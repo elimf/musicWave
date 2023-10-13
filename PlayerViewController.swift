@@ -60,13 +60,13 @@ class PlayerViewController: UIViewController {
                 }
                
             }
-            if let URLStr = trackArray?.coverBig {
+            if let URLStr = trackList?.trackImage {
                 if let url = URL(string: URLStr), let data = try? Data(contentsOf: url) {
                     trackImageView.image = UIImage(data: data)
                 }
             }
 
-            
+           
             trackLabel.text = selectedTrack.title
             artistLabel.text = selectedTrack.artist.name
             
