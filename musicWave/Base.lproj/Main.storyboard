@@ -400,13 +400,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BE6-nF-a2a">
-                                                    <rect key="frame" x="23" y="5" width="89" height="21"/>
+                                                    <rect key="frame" x="23" y="5" width="320" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLk-Vq-5OS">
-                                                    <rect key="frame" x="23" y="25" width="52" height="13"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Artist label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLk-Vq-5OS">
+                                                    <rect key="frame" x="23" y="25" width="239" height="13"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                                     <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
@@ -414,7 +414,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BE6-nF-a2a" firstAttribute="leading" secondItem="gMG-eT-aTv" secondAttribute="leading" constant="23" id="0hi-aV-KNH"/>
-                                                <constraint firstAttribute="trailing" secondItem="BE6-nF-a2a" secondAttribute="trailing" constant="281" id="X2i-Kl-Qnp"/>
+                                                <constraint firstAttribute="trailing" secondItem="BE6-nF-a2a" secondAttribute="trailing" constant="50" id="X2i-Kl-Qnp"/>
                                                 <constraint firstItem="OLk-Vq-5OS" firstAttribute="leading" secondItem="gMG-eT-aTv" secondAttribute="leading" constant="23" id="dR3-yy-BVb"/>
                                                 <constraint firstItem="OLk-Vq-5OS" firstAttribute="top" secondItem="BE6-nF-a2a" secondAttribute="bottom" constant="-1" id="p8a-Pb-SO2"/>
                                                 <constraint firstItem="BE6-nF-a2a" firstAttribute="top" secondItem="gMG-eT-aTv" secondAttribute="top" constant="5" id="uqN-q1-mX4"/>
@@ -453,7 +453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhW-C5-704" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4837" y="-290"/>
+            <point key="canvasLocation" x="4835.8778625954201" y="-290.14084507042253"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="agk-g3-sUh">
