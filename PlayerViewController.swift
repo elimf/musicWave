@@ -9,6 +9,10 @@ class PlayerViewController: UIViewController {
     var playerTimeObserver: Any?
     var isSeeking = false
     
+    var index : Int = 0
+    
+    var trackListArray : [TrackList]?
+    
     @IBOutlet weak var trackImageView: UIImageView!
     @IBOutlet weak var trackLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
@@ -16,6 +20,7 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
         if let selectedTrack = track {
             let URLStr = selectedTrack.album.coverBig
@@ -39,7 +44,8 @@ class PlayerViewController: UIViewController {
                 }
             }
         }
-        if let selectedTrack = trackList {
+        
+        if let selectedTrack = trackListArray?[index] {
             
             if let url = URL(string: "https://api.deezer.com/album/\(String(describing: trackList?.id))") {
                 let session = URLSession.shared
@@ -50,38 +56,23 @@ class PlayerViewController: UIViewController {
                         print(error)
                         
                     } else if let data = data {
-                        print(data)
                         let json = try? JSONSerialization.jsonObject(with: data, options: [])
                         self.mapAlbum(json : json as AnyObject)
                     }
-                    
-                    
-                    
+                
                 }
-               
             }
-            if let URLStr = trackList?.trackImage {
+            
+            if let URLStr = trackListArray?[index].trackImage {
                 if let url = URL(string: URLStr), let data = try? Data(contentsOf: url) {
                     trackImageView.image = UIImage(data: data)
                 }
             }
-
-           
             trackLabel.text = selectedTrack.title
             artistLabel.text = selectedTrack.artist.name
-            
             let audioUrl = URL(string: selectedTrack.preview)!
-            AudioPlayerManager.shared.playAudio(url: audioUrl)
-            trackSlider.maximumValue = 30.0
-            playerTimeObserver = AudioPlayerManager.shared.player?.addPeriodicTimeObserver(
-                forInterval: CMTime(seconds: 0.1, preferredTimescale: 600),
-                queue: .main
-            ) { [weak self] time in
-                if !self!.isSeeking {
-                    let currentTime = CMTimeGetSeconds(time)
-                    self?.trackSlider.value = Float(currentTime)
-                }
-            }
+            self.lauchPlayer(audioUrl: audioUrl)
+            
         }
     }
     func mapAlbum(json: AnyObject) {
@@ -90,7 +81,7 @@ class PlayerViewController: UIViewController {
                if let album = Album(json: item){
                    self.trackArray = album
 
-                   print(item)
+                  
                }
            }
        } else {
@@ -134,4 +125,34 @@ class PlayerViewController: UIViewController {
     @IBAction func sliderTouchUpOutside(_ sender: UISlider) {
         isSeeking = false
     }
-}
+    
+    func lauchPlayer(audioUrl : URL){
+        AudioPlayerManager.shared.playAudio(url: audioUrl)
+        trackSlider.maximumValue = 29.9
+        playerTimeObserver = AudioPlayerManager.shared.player?.addPeriodicTimeObserver(
+            forInterval: CMTime(seconds: 0.1, preferredTimescale: 600),
+            queue: .main
+        ) { [weak self] time in
+            if !self!.isSeeking {
+                let currentTime = CMTimeGetSeconds(time)
+                self?.trackSlider.value = Float(currentTime)
+                if currentTime >= 29.9 {
+                                        self?.playNextTrack()
+                                    }
+            }
+        }
+    }
+    
+    func playNextTrack() {
+        index += 1
+
+        if let numberTrack = trackListArray?.count, index < numberTrack {
+            if let selectedTrack = trackListArray?[index] {
+                let audioUrl = URL(string: selectedTrack.preview)!
+                trackLabel.text = selectedTrack.title
+                artistLabel.text = selectedTrack.artist.name
+                trackSlider.value = 0.0 // Réinitialise la valeur du curseur
+                lauchPlayer(audioUrl: audioUrl)
+            }
+        }
+    }}

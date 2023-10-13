@@ -92,21 +92,25 @@ class TrackListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedTrack = trackArray[indexPath.row]
-        self.launchPlayer(track: selectedTrack)
+        //let selectedTrack = trackArray[indexPath.row]
+        self.launchPlayer(index : indexPath.row)
        
     }
     
-    @IBAction func randomButton(_ sender : Any){
-        if let randomTrack = trackArray.randomElement(){
-            self.launchPlayer(track: randomTrack)
+    @IBAction func randomMusicButton(_ sender: Any) {
+        if let randomTrack = trackArray.randomElement() {
+            if let index = trackArray.firstIndex(of: randomTrack) {
+                self.launchPlayer(index : index)
+            }
         }
+
     }
     
-    
-    func launchPlayer(track : TrackList){
+    func launchPlayer(index : Int){
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "player") as? PlayerViewController {
-            vc.trackList = track
+            //vc.trackList = track
+            vc.trackListArray = trackArray
+            vc.index = index
             self.present(vc, animated: true, completion: nil)
         }
     }

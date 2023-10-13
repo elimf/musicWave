@@ -20,7 +20,10 @@ struct TrackList{
    let id: Int
 }
 
-extension TrackList {
+extension TrackList : Equatable {
+    static func == (lhs: TrackList, rhs: TrackList) -> Bool {
+            return lhs.id == rhs.id 
+        }
     init?(json: [String: AnyObject], trackImage : String) {
         
         guard let title = json["title"] as? String,

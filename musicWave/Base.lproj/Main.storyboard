@@ -388,7 +388,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="n2v-Gz-Xtv">
-                                <rect key="frame" x="0.0" y="375" width="393" height="443"/>
+                                <rect key="frame" x="0.0" y="435" width="393" height="383"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -428,19 +428,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQT-tC-WD5">
+                                <rect key="frame" x="117" y="380" width="159" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Musique aléatoire"/>
+                                <connections>
+                                    <action selector="randomMusicButton:" destination="dGU-Kd-Mr8" eventType="touchUpInside" id="3xO-O0-dkM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m7U-ZO-ggD"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dZL-zL-ADX" firstAttribute="leading" secondItem="m7U-ZO-ggD" secondAttribute="leading" constant="81" id="1cI-G3-FO6"/>
+                            <constraint firstItem="zQT-tC-WD5" firstAttribute="leading" secondItem="m7U-ZO-ggD" secondAttribute="leading" constant="117" id="2V8-XF-bnl"/>
                             <constraint firstItem="m7U-ZO-ggD" firstAttribute="trailing" secondItem="n2v-Gz-Xtv" secondAttribute="trailing" id="4Cz-Mz-NTW"/>
                             <constraint firstItem="m7U-ZO-ggD" firstAttribute="bottom" secondItem="C1V-oM-pYW" secondAttribute="bottom" constant="499" id="6qP-vm-AQV"/>
+                            <constraint firstItem="zQT-tC-WD5" firstAttribute="top" secondItem="dZL-zL-ADX" secondAttribute="bottom" constant="25" id="7Bh-fF-Q5k"/>
                             <constraint firstItem="m7U-ZO-ggD" firstAttribute="trailing" secondItem="C1V-oM-pYW" secondAttribute="trailing" constant="67" id="Ckb-Pa-Rek"/>
                             <constraint firstItem="C1V-oM-pYW" firstAttribute="top" secondItem="m7U-ZO-ggD" secondAttribute="top" id="GnH-tU-6ee"/>
-                            <constraint firstItem="n2v-Gz-Xtv" firstAttribute="top" secondItem="dZL-zL-ADX" secondAttribute="bottom" constant="20" id="LwX-xf-WSL"/>
+                            <constraint firstItem="n2v-Gz-Xtv" firstAttribute="top" secondItem="dZL-zL-ADX" secondAttribute="bottom" constant="80" id="LwX-xf-WSL"/>
                             <constraint firstItem="dZL-zL-ADX" firstAttribute="top" secondItem="C1V-oM-pYW" secondAttribute="bottom" constant="8" id="NNT-pE-Ppi"/>
                             <constraint firstItem="m7U-ZO-ggD" firstAttribute="bottom" secondItem="n2v-Gz-Xtv" secondAttribute="bottom" id="SCl-0F-2aD"/>
                             <constraint firstItem="n2v-Gz-Xtv" firstAttribute="leading" secondItem="m7U-ZO-ggD" secondAttribute="leading" id="bu4-hj-yrR"/>
+                            <constraint firstItem="m7U-ZO-ggD" firstAttribute="trailing" secondItem="zQT-tC-WD5" secondAttribute="trailing" constant="117" id="cxf-Kn-bAd"/>
                             <constraint firstItem="C1V-oM-pYW" firstAttribute="leading" secondItem="m7U-ZO-ggD" secondAttribute="leading" constant="66" id="dxq-k7-2dc"/>
                             <constraint firstItem="m7U-ZO-ggD" firstAttribute="trailing" secondItem="dZL-zL-ADX" secondAttribute="trailing" constant="82" id="kbr-Vp-UhE"/>
                         </constraints>
