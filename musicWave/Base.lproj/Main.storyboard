@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="-1725" y="-290"/>
         </scene>
-        <!--Home-->
+        <!--Accueil-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="home" id="BYZ-38-t0r" customClass="HomeViewController" customModule="musicWave" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,7 +117,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fxl-AZ-Tam" secondAttribute="trailing" constant="5" id="vnV-fX-G5X"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="az0-dg-ECg">
+                    <tabBarItem key="tabBarItem" title="Accueil" image="house" catalog="system" selectedImage="house" id="az0-dg-ECg">
                         <color key="badgeColor" name="launch-screen"/>
                     </tabBarItem>
                     <connections>
@@ -466,11 +466,11 @@
             </objects>
             <point key="canvasLocation" x="4835.8778625954201" y="-290.14084507042253"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Recherche-->
         <scene sceneID="agk-g3-sUh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mAa-db-vSb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="ZCM-xZ-dDA">
+                    <tabBarItem key="tabBarItem" title="Recherche" image="magnifyingglass" catalog="system" id="ZCM-xZ-dDA">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -505,6 +505,7 @@
     <color key="tintColor" name="launch-screen"/>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="play.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="launch-screen">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
